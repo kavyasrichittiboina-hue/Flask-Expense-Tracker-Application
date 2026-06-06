@@ -106,7 +106,7 @@ Columns:
 ### Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/flask-expense-tracker.git
+https://github.com/kavyasrichittiboina-hue/Flask-Expense-Tracker-Application.git
 ```
 
 ---
