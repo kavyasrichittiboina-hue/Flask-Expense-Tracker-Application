@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <h1>Update Expenses</h1>
+    <form method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" value="{{data[1]}}">
+    <label>Category:</label>
+    <select name="category">
+        <option value="Food" {% if data[2]=='Food' %}selected{% endif %}>Food</option>
+        <option value="Food" {% if data[2]=='Travel' %}selected{% endif %}>Travel</option>
+        <option value="Shopping" {% if data[2]=='Shopping' %}selected{% endif %}>Shopping</option>
+        <option value="Education" {% if data[2]=='Education' %}selected{% endif %}>Education</option>
+        <option value="Entertainment" {% if data[2]=='Entertainment' %}selected{% endif %}>Entertainment</option>
+        <option value="Others" {% if data[2]=='Others' %}selected{% endif %}>Others</option>
+
+    </select>
+    <label>Amount:</label>
+    <input type="number" name="amount" value="{{data[3]}}">
+    <label>Date:</label>
+    <input type="date" name="date" value="{{data[4]}}">
+    <button type="submit">Update</button>
+    </form>
+</body>
+</html>

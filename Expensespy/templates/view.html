@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>view</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <h1>View Expenses</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for expense in data %}
+        <tr>
+            <td>{{expense[0]}}</td>
+            <td>{{expense[1]}}</td>
+            <td>{{expense[2]}}</td>
+            <td>{{expense[3]}}</td>
+            <td>{{expense[4]}}</td>
+            <td>
+                <a href="/update/{{expense[0]}}">Update</a>
+            </td>
+            <td>
+                <a href="/delete/{{expense[0]}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
